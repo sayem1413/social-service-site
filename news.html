@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>News & Stories — Subaita Foundation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--green:#1a6b3c;--green-light:#2d9e5f;--gold:#e8a227;--cream:#faf7f2;--dark:#111a14;--mid:#3b5045;--muted:#6b7c72;--white:#ffffff;--purple:#7c4daa}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(26,107,60,0.97);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,0.15)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.nav-logo-icon{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.nav-logo-text{color:var(--white)}
+.nav-logo-text strong{display:block;font-family:'Playfair Display',serif;font-size:1.1rem;line-height:1}
+.nav-logo-text span{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;opacity:.7}
+.nav-links{display:flex;gap:26px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-donate{background:var(--gold)!important;color:var(--dark)!important;padding:8px 20px!important;border-radius:30px;font-weight:600!important}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;z-index:199;background:rgba(17,26,20,.98);backdrop-filter:blur(12px);padding:24px 5% 32px;flex-direction:column;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;font-weight:500;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--gold)}
+.mobile-menu .mob-donate{margin-top:20px;background:var(--gold);color:var(--dark)!important;padding:14px 24px;border-radius:30px;text-align:center;font-weight:700;border-bottom:none!important}
+.page-hero{padding:120px 5% 64px;background:linear-gradient(150deg,#0d3d22,#1a6b3c 55%,#2d9e5f);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 60%,rgba(232,162,39,.12) 0%,transparent 55%);pointer-events:none}
+.page-hero-inner{position:relative;z-index:2;max-width:700px}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,162,39,.15);border:1px solid rgba(232,162,39,.4);color:var(--gold);padding:6px 16px;border-radius:30px;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:20px}
+.page-badge::before{content:'●';font-size:8px}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.8rem);font-weight:900;line-height:1.12;color:var(--white);margin-bottom:18px}
+.page-hero h1 em{color:var(--gold);font-style:normal}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.75;max-width:560px}
+.breadcrumb{display:flex;align-items:center;gap:8px;margin-top:28px;font-size:.8rem;color:rgba(255,255,255,.55)}
+.breadcrumb a{color:rgba(255,255,255,.55);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:var(--gold)}
+section{padding:80px 5%}
+.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:.75rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
+.section-label::before{content:'';width:28px;height:2px;background:var(--green)}
+h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:900;line-height:1.18;color:var(--dark);margin-bottom:18px}
+h2.section-title em{color:var(--green);font-style:normal}
+
+/* Filter bar */
+.news-section{background:var(--white)}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.filter-btn{padding:8px 18px;border-radius:30px;border:1.5px solid rgba(26,107,60,.2);background:transparent;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--green);color:var(--white);border-color:var(--green)}
+
+/* Featured article */
+.featured{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border-radius:20px;overflow:hidden;margin-bottom:44px;border:1px solid rgba(0,0,0,.06)}
+.featured-img{background:linear-gradient(135deg,var(--green),var(--green-light));min-height:320px;display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(255,255,255,.4)}
+.featured-body{padding:36px;background:var(--white);display:flex;flex-direction:column;justify-content:center}
+.news-cat{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:12px}
+.cat-g{background:rgba(26,107,60,.1);color:var(--green)}
+.cat-go{background:rgba(232,162,39,.12);color:#b07c10}
+.cat-p{background:rgba(124,77,170,.1);color:var(--purple)}
+.cat-b{background:rgba(37,98,184,.1);color:#2562b8}
+.featured-body h2{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:12px}
+.featured-body p{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:20px}
+.featured-meta{display:flex;align-items:center;gap:16px;font-size:.78rem;color:var(--muted)}
+.featured-meta span{display:flex;align-items:center;gap:4px}
+.read-more{font-size:.85rem;font-weight:700;color:var(--green);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.read-more:hover{text-decoration:underline}
+
+/* News grid */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news-card{border-radius:16px;overflow:hidden;background:var(--cream);border:1px solid rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.news-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.1)}
+.news-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;color:rgba(255,255,255,.45)}
+.news-body{padding:20px}
+.news-body h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark);line-height:1.35;margin:8px 0}
+.news-body p{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.news-meta{display:flex;justify-content:space-between;align-items:center;font-size:.76rem;color:var(--muted)}
+.news-meta a{color:var(--green);font-weight:700;text-decoration:none}
+.news-meta a:hover{text-decoration:underline}
+
+/* Stories section */
+.stories{background:var(--cream)}
+.stories-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.story-card{background:var(--white);border-radius:16px;padding:32px;display:flex;gap:20px;align-items:flex-start;border:1px solid rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.story-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.story-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--white);flex-shrink:0}
+.story-card blockquote{font-size:.9rem;color:var(--mid);line-height:1.75;font-style:italic;margin-bottom:12px}
+.story-name{font-weight:700;font-size:.88rem;color:var(--dark)}
+.story-role{font-size:.76rem;color:var(--muted)}
+
+/* Newsletter strip */
+.newsletter{background:var(--green);padding:64px 5%;text-align:center}
+.newsletter h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.5vw,2.2rem);color:var(--white);font-weight:900;margin-bottom:10px}
+.newsletter p{color:rgba(255,255,255,.72);margin-bottom:28px}
+.nl-form{display:flex;max-width:460px;margin:0 auto;border-radius:50px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.nl-form input{flex:1;padding:14px 20px;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:.92rem;background:var(--white);color:var(--dark);min-width:0}
+.nl-form button{padding:14px 22px;background:var(--gold);border:none;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:700;color:var(--dark);cursor:pointer;white-space:nowrap;transition:background .2s}
+.nl-form button:hover{background:#f5c44a}
+
+footer{background:var(--dark);color:rgba(255,255,255,.72);padding:60px 5% 26px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.footer-brand p{font-size:.85rem;line-height:1.7;margin-top:14px;opacity:.6}
+.footer-socials{display:flex;gap:10px;margin-top:16px}
+.footer-socials a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:13px;text-decoration:none;transition:border-color .2s,color .2s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-col h6{font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col ul li a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;opacity:.45;flex-wrap:wrap;gap:10px}
+
+@media(max-width:1024px){.news-grid{grid-template-columns:1fr 1fr}.featured{grid-template-columns:1fr}.stories-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.nav-toggle{display:flex}section{padding:56px 5%}.news-grid{grid-template-columns:1fr}.featured-img{min-height:200px}.nl-form{flex-direction:column;border-radius:16px}.nl-form input{padding:13px 18px;text-align:center}.nl-form button{padding:13px 18px}.story-card{flex-direction:column}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}.page-hero{padding:100px 5% 48px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><div class="nav-logo-icon">🌸</div><div class="nav-logo-text"><strong>Subaita Foundation</strong><span>Narayanganj, Bangladesh</span></div></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="our-work.html">Our Work</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="join-us.html">Join Us</a></li>
+    <li><a href="news.html" class="active">News</a></li>
+    <li><a href="join-us.html#donate" class="nav-donate">Support Us</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="join-us.html">Join Us</a><a href="news.html" class="active">News</a>
+  <a href="join-us.html#donate" class="mob-donate">Support Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-badge">Updates & Stories</div>
+    <h1>News &<br><em>Stories</em></h1>
+    <p>Program updates, impact stories, announcements and news from Subaita Foundation and the communities we serve in Narayanganj.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>News</span></div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<section class="news-section">
+  <div class="section-label">Latest</div>
+  <h2 class="section-title">Recent <em>Updates</em></h2>
+
+  <div class="filter-bar">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Skill Development</button>
+    <button class="filter-btn">Education</button>
+    <button class="filter-btn">Health</button>
+    <button class="filter-btn">Events</button>
+    <button class="filter-btn">Recognition</button>
+  </div>
+
+  <!-- Featured -->
+  <div class="featured">
+    <div class="featured-img">👩‍🎓</div>
+    <div class="featured-body">
+      <span class="news-cat cat-g">Skill Development</span>
+      <h2>50 Women Graduate from Shokti Nari Sewing Center — Batch 2025</h2>
+      <p>Our largest cohort yet completed a 3-month intensive tailoring and garment-making program. Each graduate received a certificate, a starter sewing kit, and is now connected to local industry for job placement.</p>
+      <div class="featured-meta"><span>📅 April 15, 2025</span><span>👤 Foundation Team</span></div>
+      <br/><a href="#" class="read-more">Read Full Story →</a>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-img" style="background:linear-gradient(135deg,#e8a227,#f5c44a)">📱</div>
+      <div class="news-body">
+        <span class="news-cat cat-go">Digital Literacy</span>
+        <h4>Meye Shikhi Launches Mobile Banking Module in Godnail</h4>
+        <p>Rural women are now learning mobile banking via bKash and Nagad as part of our expanded Meye Shikhi digital literacy curriculum.</p>
+        <div class="news-meta"><span>March 28, 2025</span><a href="#">Read More</a></div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background:linear-gradient(135deg,var(--purple),#b07fda)">🏆</div>
+      <div class="news-body">
+        <span class="news-cat cat-p">Recognition</span>
+        <h4>Subaita Foundation Receives District Social Service Award 2025</h4>
+        <p>Narayanganj District Administration honored our foundation for outstanding contribution to women's empowerment and community development.</p>
+        <div class="news-meta"><span>February 10, 2025</span><a href="#">Read More</a></div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background:linear-gradient(135deg,#2562b8,#5a9fd4)">🤝</div>
+      <div class="news-body">
+        <span class="news-cat cat-b">Partnership</span>
+        <h4>New MOU Signed with Narayanganj City Corporation for Women's Programs</h4>
+        <p>A formal partnership with the city corporation will expand our legal aid and health camp services to three new communities in 2025.</p>
+        <div class="news-meta"><span>January 22, 2025</span><a href="#">Read More</a></div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background:linear-gradient(135deg,var(--green),var(--green-light))">📚</div>
+      <div class="news-body">
+        <span class="news-cat cat-g">Education</span>
+        <h4>120 Girls Receive Alo Scholarships for 2024–25 Academic Year</h4>
+        <p>Our annual scholarship round supported 120 girl students at risk of dropping out, covering school fees and educational materials.</p>
+        <div class="news-meta"><span>December 5, 2024</span><a href="#">Read More</a></div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background:linear-gradient(135deg,#e8a227,#c97c10)">🏥</div>
+      <div class="news-body">
+        <span class="news-cat cat-go">Health</span>
+        <h4>Shusto Nari Health Camp Reaches 300 Women in Siddhirganj</h4>
+        <p>Our quarterly health camp expanded to Siddhirganj, offering free maternal health checks and nutrition counseling to 300 women and mothers.</p>
+        <div class="news-meta"><span>November 18, 2024</span><a href="#">Read More</a></div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background:linear-gradient(135deg,var(--purple),#7c4daa)">💼</div>
+      <div class="news-body">
+        <span class="news-cat cat-p">Micro-Enterprise</span>
+        <h4>50 Women Launch Businesses Through Gram Udyog Micro-Grant Round 4</h4>
+        <p>The fourth round of our Gram Udyog program disbursed grants to 50 women entrepreneurs in food, handicraft, and service sectors.</p>
+        <div class="news-meta"><span>October 8, 2024</span><a href="#">Read More</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="stories">
+  <div class="section-label">Impact Stories</div>
+  <h2 class="section-title">Women Who <em>Changed Their Lives</em></h2>
+  <div class="stories-grid">
+    <div class="story-card">
+      <div class="story-avatar" style="background:var(--green)">F</div>
+      <div>
+        <blockquote>"The sewing training gave me a skill and my own income. I no longer depend on anyone — I run my own small tailoring shop in Godnail now."</blockquote>
+        <div class="story-name">Fatema Begum</div>
+        <div class="story-role">Shokti Nari Graduate · Godnail, Narayanganj</div>
+      </div>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar" style="background:var(--gold);color:var(--dark)">R</div>
+      <div>
+        <blockquote>"When I faced a family crisis, the legal aid cell guided me with patience and dignity. They helped me secure my rights and protect my children."</blockquote>
+        <div class="story-name">Rokshana Khatun</div>
+        <div class="story-role">Legal Aid Beneficiary · Narayanganj</div>
+      </div>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar" style="background:var(--purple)">S</div>
+      <div>
+        <blockquote>"With Subaita Foundation's micro-grant, I started selling homemade pickles and now earn more than my husband. My children call me the 'business mama'."</blockquote>
+        <div class="story-name">Sharmin Akter</div>
+        <div class="story-role">Gram Udyog Graduate · Rupganj</div>
+      </div>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar" style="background:var(--mid)">N</div>
+      <div>
+        <blockquote>"Thanks to the Alo Scholarship, my daughter completed her SSC. Without Subaita Foundation's support, we would have been forced to stop her education."</blockquote>
+        <div class="story-name">Nasrin Akter</div>
+        <div class="story-role">Parent · Alo Scholarship Program</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="section-label" style="justify-content:center;color:rgba(255,255,255,.6)">Stay Connected</div>
+  <h2>Get Our Monthly <span style="color:var(--gold)">Impact Report</span></h2>
+  <p>Stories, program updates, and news — delivered straight to your inbox.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="Enter your email address"/>
+    <button>Subscribe</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px"><div style="width:42px;height:42px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🌸</div><div><div style="font-family:'Playfair Display',serif;color:var(--white);font-size:1.1rem;font-weight:700;line-height:1.2">Subaita Foundation</div><div style="font-size:.65rem;letter-spacing:2px;text-transform:uppercase;opacity:.5">Empower · Educate · Elevate</div></div></div>
+      <p>A dedicated non-profit empowering women through skill development, education, and social protection in Narayanganj, Bangladesh.</p>
+      <div class="footer-socials"><a href="#">f</a><a href="#">in</a><a href="#">yt</a><a href="#">w</a></div>
+    </div>
+    <div class="footer-col"><h6>Our Work</h6><ul><li><a href="our-work.html">Women's Empowerment</a></li><li><a href="our-work.html">Skill Development</a></li><li><a href="our-work.html">Education Support</a></li><li><a href="our-work.html">Health & Wellness</a></li></ul></div>
+    <div class="footer-col"><h6>Get Involved</h6><ul><li><a href="join-us.html">Volunteer</a></li><li><a href="join-us.html#donate">Donate</a></li><li><a href="join-us.html">Partner With Us</a></li><li><a href="join-us.html">Internship</a></li></ul></div>
+    <div class="footer-col"><h6>Contact</h6><ul><li><a href="#">📍 Dolon Chapa City Plaza (Ground Floor), Chairman Office, Godnail, Narayanganj</a></li><li><a href="#">📞 +880 1700 000000</a></li><li><a href="#">✉️ info@subaitafoundation.org</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Subaita Foundation. All rights reserved.</span><span>Registered NGO · Narayanganj, Bangladesh</span></div>
+</footer>
+<script>
+const t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu');
+t.addEventListener('click',()=>{t.classList.toggle('open');m.classList.toggle('open')});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t.classList.remove('open');m.classList.remove('open')}));
+document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',function(){document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));this.classList.add('active')}));
+</script>
+</body>
+</html>
