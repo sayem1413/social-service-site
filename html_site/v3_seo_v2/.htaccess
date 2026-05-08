@@ -1,29 +1,66 @@
 RewriteEngine On
 
-# Force HTTPS
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# =========================================
+# FORCE HTTPS
+# =========================================
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Remove .html extension
+# =========================================
+# REMOVE .html EXTENSION
+# Redirect /page.html -> /page
+# =========================================
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ %1 [R=301,L]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
+# =========================================
+# INTERNALLY LOAD .html FILE
+# /about -> /about.html
+# =========================================
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
+RewriteRule ^([^/]+)$ $1.html [L]
 
-# Custom 404 page
+# =========================================
+# CUSTOM 404 PAGE
+# =========================================
 ErrorDocument 404 /404.html
 
-# Browser caching
+# =========================================
+# BROWSER CACHING
+# =========================================
 <IfModule mod_expires.c>
-ExpiresActive On
+    ExpiresActive On
 
-ExpiresByType image/jpg "access plus 1 year"
-ExpiresByType image/jpeg "access plus 1 year"
-ExpiresByType image/png "access plus 1 year"
-ExpiresByType image/svg+xml "access plus 1 year"
+    # Images
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
 
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType application/javascript "access plus 1 month"
+    # CSS & JS
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Fonts
+    ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
+
+# =========================================
+# ENABLE GZIP COMPRESSION
+# =========================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# =========================================
+# PREVENT DIRECTORY LISTING
+# =========================================
+Options -Indexes

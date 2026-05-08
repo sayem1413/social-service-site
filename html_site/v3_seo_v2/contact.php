@@ -22,7 +22,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit("Invalid email address.");
 }
 
-$to = "info@subaita.org";
+$to = "mail@subaitafoundation.com";
 
 $email_subject = "New Website Message: " . $subject;
 
@@ -35,7 +35,7 @@ Message:
 $message
 ";
 
-$headers = "From: noreply@subaita.org\r\n";
+$headers = "From: mail@subaitafoundation.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
