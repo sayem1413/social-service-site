@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<!-- SEO -->
+<title>Join Us — Volunteer &amp; Donate | Subaita Foundation</title>
+<meta name="description" content="Volunteer, donate, or partner with Subaita Foundation in Narayanganj. Support women's empowerment programs through bKash, bank transfer, or your time and skills."/>
+<meta name="keywords" content="volunteer Narayanganj NGO, donate women Bangladesh, bKash donation NGO, partner NGO Bangladesh"/>
+<meta name="author" content="Subaita Foundation"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://subaitafoundation.com/join-us.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://subaitafoundation.com/join-us.html"/>
+<meta property="og:title" content="Join Us — Volunteer &amp; Donate | Subaita Foundation"/>
+<meta property="og:description" content="Volunteer, donate, or partner with Subaita Foundation in Narayanganj. Support women's empowerment programs through bKash, bank transfer, or your time and skills."/>
+<meta property="og:image" content="https://subaitafoundation.com/assets/og-image.jpg"/>
+<meta property="og:locale" content="en_BD"/>
+<meta property="og:site_name" content="Subaita Foundation"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Join Us — Volunteer &amp; Donate | Subaita Foundation"/>
+<meta name="twitter:description" content="Volunteer, donate, or partner with Subaita Foundation in Narayanganj. Support women's empowerment programs through bKash, bank transfer, or your time and skills."/>
+<meta name="twitter:image" content="https://subaitafoundation.com/assets/og-image.jpg"/>
+<meta name="geo.region" content="BD-40"/>
+<meta name="geo.placename" content="Narayanganj, Bangladesh"/>
+<meta name="geo.position" content="23.6238;90.4998"/>
+<meta name="ICBM" content="23.6238, 90.4998"/>
+<meta name="theme-color" content="#1a6b3c"/>
+<meta name="format-detection" content="telephone=no"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css"/>
+
+<style>
+/* ── FADE ANIMATION ── */
+[data-fade]{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+[data-fade].visible{opacity:1;transform:none}
+[data-fade][data-delay="1"]{transition-delay:0.1s}
+[data-fade][data-delay="2"]{transition-delay:0.2s}
+[data-fade][data-delay="3"]{transition-delay:0.3s}
+[data-fade][data-delay="4"]{transition-delay:0.4s}
+[data-fade][data-delay="5"]{transition-delay:0.5s}
+[data-fade][data-delay="6"]{transition-delay:0.6s}
+
+.ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.way-card{border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:34px 26px;text-align:center;transition:var(--transition)}
+.way-card:hover{border-color:var(--green);background:rgba(26,107,60,.02);transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.way-icon{font-size:2.6rem;display:block;margin-bottom:14px}
+.way-card h3{margin-bottom:8px;color:var(--dark)}
+.way-card p{font-size:.87rem;line-height:1.65;margin-bottom:22px}
+.vol-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.vol-perks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.vol-perks li{display:flex;gap:12px;font-size:.9rem;color:var(--mid);line-height:1.6}
+.vol-perks li::before{content:'✓';background:var(--green);color:var(--white);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
+.form-card{background:var(--white);border-radius:var(--radius-xl);padding:38px 34px;box-shadow:var(--shadow-md)}
+.form-card h3{margin-bottom:24px;color:var(--dark)}
+.form-submit{width:100%;padding:14px;background:var(--green);color:var(--white);border:none;border-radius:40px;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:var(--transition);margin-top:6px}
+.form-submit:hover{background:var(--green-dark);transform:translateY(-1px)}
+.donate-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.amount-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.amount-btn{padding:16px;border:1.5px solid var(--border);border-radius:var(--radius-md);background:var(--cream);text-align:center;cursor:pointer;transition:var(--transition)}
+.amount-btn:hover,.amount-btn.selected{border-color:var(--green);background:rgba(26,107,60,.05)}
+.amount-btn .amt{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--green);display:block}
+.amount-btn .amt-label{font-size:.74rem;color:var(--muted);margin-top:2px}
+.donate-stats{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.ds-row{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;background:var(--cream);border-radius:var(--radius-sm)}
+.ds-row span:first-child{font-size:.84rem;color:var(--mid)}
+.ds-row span:last-child{font-size:.88rem;font-weight:700;color:var(--green)}
+.contact-strip{background:linear-gradient(135deg,var(--green-dark),var(--green));padding:60px 0}
+.c-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.c-item{display:flex;gap:16px;align-items:flex-start}
+.c-icon{width:48px;height:48px;background:rgba(255,255,255,.09);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.c-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.5);margin-bottom:4px;font-weight:600}
+.c-val{font-size:.9rem;color:var(--white);line-height:1.5}
+@media(max-width:1024px){.ways-grid{grid-template-columns:1fr 1fr}.vol-inner,.donate-inner{grid-template-columns:1fr;gap:44px}.c-inner{grid-template-columns:1fr;gap:20px}}
+@media(max-width:768px){.ways-grid{grid-template-columns:1fr}.amount-grid{grid-template-columns:1fr 1fr}}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 5%">
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="13" cy="10" r="5" fill="white" opacity="0.9"/>
+  <ellipse cx="13" cy="21" rx="8" ry="5" fill="white" opacity="0.7"/>
+  <path d="M5 14 Q8 9 13 10 Q18 11 21 14" stroke="white" stroke-width="1.2" fill="none" opacity="0.5"/>
+</svg></div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">Subaita Foundation</span>
+        <span class="logo-tagline">Empower · Educate · Elevate</span>
+      </div>
+    </a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="join-us.html" class="nav-cta btn">Donate / Join</a><a href="news.html">News</a><a href="contact.html">Contact</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="join-us.html" class="mob-cta">Donate / Join</a><a href="news.html">News</a><a href="contact.html">Contact</a></div>
+
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner">
+    <div class="page-badge">Be Part of the Change</div>
+    <h1>Join <em>Subaita</em> Foundation</h1>
+    <p>Volunteer your time, donate your support, or partner your organization. Every role you play transforms a woman's life in Narayanganj.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="current">Join Us</span></div>
+  </div></div>
+</div>
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="text-center" data-fade>
+      <div class="label center">How You Can Help</div>
+      <h2>Ways to Get <em class="em-green">Involved</em></h2>
+    </div>
+    <div class="ways-grid">
+      <div class="way-card" data-fade data-delay="1"><span class="way-icon">🙋‍♀️</span><h3>Volunteer</h3><p>Join 150+ volunteers on the ground. Teach, counsel, organize or coordinate — your skills are needed right now.</p><a href="#volunteer" class="btn btn-outline btn-sm">Apply Now</a></div>
+      <div class="way-card" data-fade data-delay="2"><span class="way-icon">💚</span><h3>Donate</h3><p>96% of every taka goes directly to programs. Even ৳100 contributes to a fund that changes a life.</p><a href="#donate" class="btn btn-green btn-sm">Donate Now</a></div>
+      <div class="way-card" data-fade data-delay="3"><span class="way-icon">🤝</span><h3>Partner</h3><p>Organizations and businesses can partner through CSR, sponsorships, or joint community initiatives.</p><a href="#partner" class="btn btn-outline btn-sm">Partner With Us</a></div>
+      <div class="way-card" data-fade data-delay="1"><span class="way-icon">🎓</span><h3>Intern</h3><p>Gain real-world experience in social development, communications, research, or field operations.</p><a href="#intern" class="btn btn-outline btn-sm">Apply for Internship</a></div>
+      <div class="way-card" data-fade data-delay="2"><span class="way-icon">📢</span><h3>Advocate</h3><p>Help us spread the word on social media, in your community, or at your workplace. Awareness creates action.</p><a href="#" class="btn btn-outline btn-sm">Share Our Mission</a></div>
+      <div class="way-card" data-fade data-delay="3"><span class="way-icon">💡</span><h3>Pro-Bono Help</h3><p>Offer professional skills — legal, medical, design, finance — on a pro-bono basis to directly support our work.</p><a href="#volunteer" class="btn btn-outline btn-sm">Offer Skills</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream" id="volunteer">
+  <div class="container">
+    <div class="vol-inner">
+      <div data-fade>
+        <div class="label">Volunteer</div>
+        <h2>Give Your <em class="em-green">Time</em></h2>
+        <p style="margin-top:12px">When you volunteer with Subaita Foundation, you're not just giving time — you're gaining purpose. You'll work alongside a passionate team making real, visible change in women's lives every day.</p>
+        <ul class="vol-perks">
+          <li>Hands-on field experience in community development</li>
+          <li>Certificate of volunteering &amp; recommendation letters</li>
+          <li>Training and orientation before program deployment</li>
+          <li>Flexible hours — weekends and remote options available</li>
+          <li>Be part of a mission-driven, supportive community</li>
+        </ul>
+      </div>
+      <div class="form-card" data-fade data-delay="2">
+        <h3>Volunteer / Intern Application</h3>
+        <form data-demo>
+          <div class="form-row"><div class="form-group"><label>First Name</label><input type="text" placeholder="Fatema" required/></div><div class="form-group"><label>Last Name</label><input type="text" placeholder="Begum" required/></div></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@email.com" required/></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+880 1XXX XXXXXX"/></div>
+          <div class="form-group"><label>Role Interested In</label><select><option>Volunteer — Field Programs</option><option>Volunteer — Training &amp; Teaching</option><option>Intern — Social Development</option><option>Intern — Communications</option><option>Pro-Bono Professional</option><option>Campus Ambassador</option></select></div>
+          <div class="form-group"><label>Why do you want to join?</label><textarea placeholder="Share your motivation and any relevant skills or experience..."></textarea></div>
+          <button type="submit" class="form-submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="donate">
+  <div class="container">
+    <div class="text-center" data-fade style="margin-bottom:48px">
+      <div class="label center">Support Our Work</div>
+      <h2>Make a <em class="em-green">Donation</em></h2>
+    </div>
+    <div class="donate-inner">
+      <div data-fade>
+        <div class="amount-grid">
+          <div class="amount-btn selected" data-amount="500"><span class="amt">৳500</span><div class="amt-label">Buys school materials</div></div>
+          <div class="amount-btn" data-amount="1000"><span class="amt">৳1,000</span><div class="amt-label">Feeds a family a week</div></div>
+          <div class="amount-btn" data-amount="2500"><span class="amt">৳2,500</span><div class="amt-label">Health camp slot</div></div>
+          <div class="amount-btn" data-amount="5000"><span class="amt">৳5,000</span><div class="amt-label">Micro-grant seed</div></div>
+        </div>
+        <div class="form-card" style="box-shadow:none;border:1.5px solid var(--border)">
+          <h3>Custom Donation Amount</h3>
+          <form data-demo>
+            <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full Name" required/></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com" required/></div>
+            <div class="form-group"><label>Donation Amount (৳)</label><input type="number" id="customAmount" placeholder="Enter amount" value="500"/></div>
+            <div class="form-group"><label>Payment Method</label><select><option>bKash</option><option>Nagad</option><option>Bank Transfer</option><option>Rocket</option></select></div>
+            <button type="submit" class="form-submit">Proceed to Donate</button>
+            <p style="text-align:center;font-size:.76rem;color:var(--muted);margin-top:12px">100% secure · 96% goes directly to programs</p>
+          </form>
+        </div>
+      </div>
+      <div data-fade data-delay="2">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:14px">Your Money, <em class="em-green">Their Future</em></h3>
+        <p>Every donation to Subaita Foundation is handled with full transparency. We publish annual financial reports so you can see exactly how your support creates change.</p>
+        <p style="margin-top:12px">No donation is too small. Even ৳100 contributes to a fund that changes a life.</p>
+        <div class="donate-stats">
+          <div class="ds-row"><span>Women supported to date</span><span>5,000+</span></div>
+          <div class="ds-row"><span>Funds to programs</span><span>96%</span></div>
+          <div class="ds-row"><span>Total donors</span><span>400+</span></div>
+          <div class="ds-row"><span>Total raised</span><span>৳60 Lakh+</span></div>
+          <div class="ds-row"><span>Active programs</span><span>6 Programs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-strip" id="partner">
+  <div class="container">
+    <div class="c-inner">
+      <div class="c-item"><div class="c-icon">📍</div><div><div class="c-label">Office Address</div><div class="c-val">Dolon Chapa City Plaza (Ground Floor), Chairman Office, Godnail, Narayanganj</div></div></div>
+      <div class="c-item"><div class="c-icon">📞</div><div><div class="c-label">Phone</div><div class="c-val">+880 1700 000000</div></div></div>
+      <div class="c-item"><div class="c-icon">✉️</div><div><div class="c-label">Email</div><div class="c-val">info@subaitafoundation.com</div></div></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="newsletter-section">
+  <div class="container">
+    <div class="label center white">Stay Connected</div>
+    <h2 style="color:var(--white);margin-bottom:10px">Get Our Monthly <em class="em-gold">Impact Report</em></h2>
+    <p>Stories, program updates and news — straight to your inbox. No spam, ever.</p>
+    <form class="nl-form" data-demo>
+      <input type="email" placeholder="Enter your email address" required/>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="margin-bottom:0">
+          <div class="logo-icon" style="width:42px;height:42px">{LOGO_SVG}</div>
+          <div class="logo-text-wrap">
+            <span class="logo-name">Subaita Foundation</span>
+            <span class="logo-tagline">Empower · Educate · Elevate</span>
+          </div>
+        </a>
+        <p class="footer-brand-text">A registered non-profit organization dedicated to women's empowerment, skill development, education, and social protection in Narayanganj, Bangladesh.</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook" aria-label="Facebook">f</a>
+          <a href="#" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+          <a href="#" title="WhatsApp" aria-label="WhatsApp">w</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="news.html">News &amp; Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Get Involved</h6>
+        <ul>
+          <li><a href="join-us.html#volunteer">Volunteer</a></li>
+          <li><a href="join-us.html#donate">Donate</a></li>
+          <li><a href="join-us.html#partner">Partner With Us</a></li>
+          <li><a href="join-us.html#intern">Internship</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="#">📍 Dolon Chapa City Plaza (Ground Floor), Chairman Office, Godnail, Narayanganj</a></li>
+          <li><a href="tel:+8801700000000">📞 +880 1700 000000</a></li>
+          <li><a href="mailto:info@subaitafoundation.com">✉️ info@subaitafoundation.com</a></li>
+          <li><a href="contact.html">📅 Mon–Sat: 9am – 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Subaita Foundation. All rights reserved.</span>
+      <span>Registered NGO · Narayanganj, Bangladesh</span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<!-- SEO -->
+<title>Gallery — Our Work in Pictures | Subaita Foundation</title>
+<meta name="description" content="Photo gallery of Subaita Foundation's programs, events, graduates and community work in Narayanganj, Bangladesh."/>
+<meta name="keywords" content="Subaita Foundation gallery, NGO photos Bangladesh, women empowerment photos"/>
+<meta name="author" content="Subaita Foundation"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://subaitafoundation.com/gallery.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://subaitafoundation.com/gallery.html"/>
+<meta property="og:title" content="Gallery — Our Work in Pictures | Subaita Foundation"/>
+<meta property="og:description" content="Photo gallery of Subaita Foundation's programs, events, graduates and community work in Narayanganj, Bangladesh."/>
+<meta property="og:image" content="https://subaitafoundation.com/assets/og-image.jpg"/>
+<meta property="og:locale" content="en_BD"/>
+<meta property="og:site_name" content="Subaita Foundation"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Gallery — Our Work in Pictures | Subaita Foundation"/>
+<meta name="twitter:description" content="Photo gallery of Subaita Foundation's programs, events, graduates and community work in Narayanganj, Bangladesh."/>
+<meta name="twitter:image" content="https://subaitafoundation.com/assets/og-image.jpg"/>
+<meta name="geo.region" content="BD-40"/>
+<meta name="geo.placename" content="Narayanganj, Bangladesh"/>
+<meta name="geo.position" content="23.6238;90.4998"/>
+<meta name="ICBM" content="23.6238, 90.4998"/>
+<meta name="theme-color" content="#1a6b3c"/>
+<meta name="format-detection" content="telephone=no"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css"/>
+
+<style>
+/* ── FADE ANIMATION ── */
+[data-fade]{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+[data-fade].visible{opacity:1;transform:none}
+[data-fade][data-delay="1"]{transition-delay:0.1s}
+[data-fade][data-delay="2"]{transition-delay:0.2s}
+[data-fade][data-delay="3"]{transition-delay:0.3s}
+[data-fade][data-delay="4"]{transition-delay:0.4s}
+[data-fade][data-delay="5"]{transition-delay:0.5s}
+[data-fade][data-delay="6"]{transition-delay:0.6s}
+
+.gallery-filter{display:flex;gap:10px;flex-wrap:wrap;margin:36px 0}
+.filter-btn{padding:8px 18px;border-radius:30px;border:1.5px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:var(--transition)}
+.filter-btn:hover,.filter-btn.active{background:var(--green);color:var(--white);border-color:var(--green)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;position:relative;cursor:pointer;transition:var(--transition)}
+.gallery-item:hover{transform:scale(1.02);box-shadow:var(--shadow-lg)}
+.gallery-item:nth-child(4n+1){grid-column:span 2;aspect-ratio:16/9}
+.gallery-thumb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:rgba(255,255,255,.5)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.6) 0%,transparent 60%);display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity .3s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-cap{color:var(--white);font-size:.85rem;font-weight:600}
+@media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr}.gallery-item:nth-child(4n+1){grid-column:span 1;aspect-ratio:4/3}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 5%">
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="13" cy="10" r="5" fill="white" opacity="0.9"/>
+  <ellipse cx="13" cy="21" rx="8" ry="5" fill="white" opacity="0.7"/>
+  <path d="M5 14 Q8 9 13 10 Q18 11 21 14" stroke="white" stroke-width="1.2" fill="none" opacity="0.5"/>
+</svg></div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">Subaita Foundation</span>
+        <span class="logo-tagline">Empower · Educate · Elevate</span>
+      </div>
+    </a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="gallery.html" class="active">Gallery</a><a href="join-us.html" class="nav-cta btn">Donate / Join</a><a href="news.html">News</a><a href="contact.html">Contact</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="gallery.html" class="active">Gallery</a><a href="join-us.html" class="mob-cta">Donate / Join</a><a href="news.html">News</a><a href="contact.html">Contact</a></div>
+
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner">
+    <div class="page-badge">Photo Gallery</div>
+    <h1>Our Work in <em>Pictures</em></h1>
+    <p>Glimpses of our programs, events, graduates, and the communities we serve across Narayanganj district.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="current">Gallery</span></div>
+  </div></div>
+</div>
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="label" data-fade>Visual Stories</div>
+    <h2 data-fade data-delay="1">Moments of <em class="em-green">Change</em></h2>
+    <div class="gallery-filter filter-bar" data-fade data-delay="2">
+      <button class="filter-btn active" data-filter="all" data-target=".gallery-grid">All</button>
+      <button class="filter-btn" data-filter="sewing" data-target=".gallery-grid">Sewing Center</button>
+      <button class="filter-btn" data-filter="education" data-target=".gallery-grid">Education</button>
+      <button class="filter-btn" data-filter="health" data-target=".gallery-grid">Health Camps</button>
+      <button class="filter-btn" data-filter="events" data-target=".gallery-grid">Events</button>
+      <button class="filter-btn" data-filter="community" data-target=".gallery-grid">Community</button>
+    </div>
+    <div class="gallery-grid filterable-grid">
+      <div class="gallery-item" data-cat="sewing" data-fade style="background:linear-gradient(135deg,var(--green),var(--green-light))"><div class="gallery-thumb">✂️</div><div class="gallery-overlay"><span class="gallery-cap">Shokti Nari Sewing Center — Batch 2025</span></div></div>
+      <div class="gallery-item" data-cat="sewing" data-fade style="background:linear-gradient(135deg,#2d9e5f,#1a6b3c)"><div class="gallery-thumb">👗</div><div class="gallery-overlay"><span class="gallery-cap">Graduation Ceremony — 50 Women</span></div></div>
+      <div class="gallery-item" data-cat="education" data-fade style="background:linear-gradient(135deg,#d4921e,#f0b040)"><div class="gallery-thumb">📚</div><div class="gallery-overlay"><span class="gallery-cap">Alo Scholarship Distribution 2024</span></div></div>
+      <div class="gallery-item" data-cat="health" data-fade style="background:linear-gradient(135deg,#2562b8,#5a9fd4)"><div class="gallery-thumb">🏥</div><div class="gallery-overlay"><span class="gallery-cap">Shusto Nari Health Camp — Siddhirganj</span></div></div>
+      <div class="gallery-item" data-cat="community" data-fade style="background:linear-gradient(135deg,#7c4daa,#b07fda)"><div class="gallery-thumb">👩‍👧‍👦</div><div class="gallery-overlay"><span class="gallery-cap">Community Outreach — Godnail</span></div></div>
+      <div class="gallery-item" data-cat="events" data-fade style="background:linear-gradient(135deg,var(--green-dark),var(--green))"><div class="gallery-thumb">🏆</div><div class="gallery-overlay"><span class="gallery-cap">District Social Service Award 2025</span></div></div>
+      <div class="gallery-item" data-cat="sewing" data-fade style="background:linear-gradient(135deg,#0d3d22,#1a6b3c)"><div class="gallery-thumb">🧵</div><div class="gallery-overlay"><span class="gallery-cap">Skills Training in Progress</span></div></div>
+      <div class="gallery-item" data-cat="education" data-fade style="background:linear-gradient(135deg,#a06a10,#d4921e)"><div class="gallery-thumb">🎓</div><div class="gallery-overlay"><span class="gallery-cap">Girls Education Awareness Campaign</span></div></div>
+      <div class="gallery-item" data-cat="health" data-fade style="background:linear-gradient(135deg,#1a4d8c,#2d7ecf)"><div class="gallery-thumb">💊</div><div class="gallery-overlay"><span class="gallery-cap">Free Medical Check-Up Camp</span></div></div>
+      <div class="gallery-item" data-cat="community" data-fade style="background:linear-gradient(135deg,#3b5045,#1a6b3c)"><div class="gallery-thumb">🤝</div><div class="gallery-overlay"><span class="gallery-cap">Volunteer Team — Narayanganj</span></div></div>
+      <div class="gallery-item" data-cat="events" data-fade style="background:linear-gradient(135deg,#581c87,#7c4daa)"><div class="gallery-thumb">🎤</div><div class="gallery-overlay"><span class="gallery-cap">Women Empowerment Summit 2024</span></div></div>
+      <div class="gallery-item" data-cat="community" data-fade style="background:linear-gradient(135deg,#065f46,#2d9e5f)"><div class="gallery-thumb">🌺</div><div class="gallery-overlay"><span class="gallery-cap">International Women's Day Celebration</span></div></div>
+    </div>
+    <p style="text-align:center;margin-top:32px;color:var(--muted);font-size:.88rem">📸 Real photos will replace these placeholders once you upload images.</p>
+  </div>
+</section>
+
+
+<div class="newsletter-section">
+  <div class="container">
+    <div class="label center white">Stay Connected</div>
+    <h2 style="color:var(--white);margin-bottom:10px">Get Our Monthly <em class="em-gold">Impact Report</em></h2>
+    <p>Stories, program updates and news — straight to your inbox. No spam, ever.</p>
+    <form class="nl-form" data-demo>
+      <input type="email" placeholder="Enter your email address" required/>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="margin-bottom:0">
+          <div class="logo-icon" style="width:42px;height:42px">{LOGO_SVG}</div>
+          <div class="logo-text-wrap">
+            <span class="logo-name">Subaita Foundation</span>
+            <span class="logo-tagline">Empower · Educate · Elevate</span>
+          </div>
+        </a>
+        <p class="footer-brand-text">A registered non-profit organization dedicated to women's empowerment, skill development, education, and social protection in Narayanganj, Bangladesh.</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook" aria-label="Facebook">f</a>
+          <a href="#" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+          <a href="#" title="WhatsApp" aria-label="WhatsApp">w</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="news.html">News &amp; Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Get Involved</h6>
+        <ul>
+          <li><a href="join-us.html#volunteer">Volunteer</a></li>
+          <li><a href="join-us.html#donate">Donate</a></li>
+          <li><a href="join-us.html#partner">Partner With Us</a></li>
+          <li><a href="join-us.html#intern">Internship</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="#">📍 Dolon Chapa City Plaza (Ground Floor), Chairman Office, Godnail, Narayanganj</a></li>
+          <li><a href="tel:+8801700000000">📞 +880 1700 000000</a></li>
+          <li><a href="mailto:info@subaitafoundation.com">✉️ info@subaitafoundation.com</a></li>
+          <li><a href="contact.html">📅 Mon–Sat: 9am – 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Subaita Foundation. All rights reserved.</span>
+      <span>Registered NGO · Narayanganj, Bangladesh</span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

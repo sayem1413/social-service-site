@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<!-- SEO -->
+<title>News &amp; Stories — Latest Updates | Subaita Foundation</title>
+<meta name="description" content="Latest news, program updates and impact stories from Subaita Foundation empowering women across Narayanganj, Bangladesh."/>
+<meta name="keywords" content="Subaita Foundation news, women empowerment news Bangladesh, NGO news Narayanganj, impact stories"/>
+<meta name="author" content="Subaita Foundation"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://subaitafoundation.com/news.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://subaitafoundation.com/news.html"/>
+<meta property="og:title" content="News &amp; Stories — Latest Updates | Subaita Foundation"/>
+<meta property="og:description" content="Latest news, program updates and impact stories from Subaita Foundation empowering women across Narayanganj, Bangladesh."/>
+<meta property="og:image" content="https://subaitafoundation.com/assets/og-image.jpg"/>
+<meta property="og:locale" content="en_BD"/>
+<meta property="og:site_name" content="Subaita Foundation"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="News &amp; Stories — Latest Updates | Subaita Foundation"/>
+<meta name="twitter:description" content="Latest news, program updates and impact stories from Subaita Foundation empowering women across Narayanganj, Bangladesh."/>
+<meta name="twitter:image" content="https://subaitafoundation.com/assets/og-image.jpg"/>
+<meta name="geo.region" content="BD-40"/>
+<meta name="geo.placename" content="Narayanganj, Bangladesh"/>
+<meta name="geo.position" content="23.6238;90.4998"/>
+<meta name="ICBM" content="23.6238, 90.4998"/>
+<meta name="theme-color" content="#1a6b3c"/>
+<meta name="format-detection" content="telephone=no"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css"/>
+
+<style>
+/* ── FADE ANIMATION ── */
+[data-fade]{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+[data-fade].visible{opacity:1;transform:none}
+[data-fade][data-delay="1"]{transition-delay:0.1s}
+[data-fade][data-delay="2"]{transition-delay:0.2s}
+[data-fade][data-delay="3"]{transition-delay:0.3s}
+[data-fade][data-delay="4"]{transition-delay:0.4s}
+[data-fade][data-delay="5"]{transition-delay:0.5s}
+[data-fade][data-delay="6"]{transition-delay:0.6s}
+
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{padding:8px 18px;border-radius:30px;border:1.5px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;color:var(--muted);cursor:pointer;transition:var(--transition)}
+.filter-btn:hover,.filter-btn.active{background:var(--green);color:var(--white);border-color:var(--green)}
+.featured-article{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border-radius:var(--radius-xl);overflow:hidden;margin-bottom:40px;border:1px solid var(--border)}
+.fa-img{min-height:320px;display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(255,255,255,.4)}
+.fa-body{padding:36px;background:var(--white);display:flex;flex-direction:column;justify-content:center}
+.fa-body h2{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);color:var(--dark);line-height:1.3;margin:10px 0 12px}
+.fa-meta{font-size:.78rem;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+.news-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:0}
+.stories-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+.story-card{background:var(--white);border-radius:var(--radius-lg);padding:30px;display:flex;gap:18px;align-items:flex-start;border:1px solid var(--border);transition:var(--transition)}
+.story-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.story-avatar{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--white);flex-shrink:0}
+.story-card blockquote{font-size:.9rem;color:var(--mid);line-height:1.75;font-style:italic;margin-bottom:10px}
+.story-name{font-weight:700;font-size:.88rem;color:var(--dark)}
+.story-role{font-size:.75rem;color:var(--muted)}
+@media(max-width:1024px){.featured-article{grid-template-columns:1fr}.fa-img{min-height:220px}.news-grid-3{grid-template-columns:1fr 1fr}.stories-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.news-grid-3{grid-template-columns:1fr}.story-card{flex-direction:column}}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 5%">
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="13" cy="10" r="5" fill="white" opacity="0.9"/>
+  <ellipse cx="13" cy="21" rx="8" ry="5" fill="white" opacity="0.7"/>
+  <path d="M5 14 Q8 9 13 10 Q18 11 21 14" stroke="white" stroke-width="1.2" fill="none" opacity="0.5"/>
+</svg></div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">Subaita Foundation</span>
+        <span class="logo-tagline">Empower · Educate · Elevate</span>
+      </div>
+    </a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="join-us.html" class="nav-cta btn">Donate / Join</a><a href="news.html" class="active">News</a><a href="contact.html">Contact</a></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programs.html">Programs</a><a href="gallery.html">Gallery</a><a href="join-us.html" class="mob-cta">Donate / Join</a><a href="news.html" class="active">News</a><a href="contact.html">Contact</a></div>
+
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner">
+    <div class="page-badge">Updates &amp; Stories</div>
+    <h1>News &amp; <em>Stories</em></h1>
+    <p>Program updates, impact stories, announcements and news from Subaita Foundation and the communities we serve in Narayanganj.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">›</span><span class="current">News</span></div>
+  </div></div>
+</div>
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="label" data-fade>Latest</div>
+    <h2 data-fade data-delay="1">Recent <em class="em-green">Updates</em></h2>
+    <div class="filter-bar filter-bar" data-fade data-delay="2">
+      <button class="filter-btn active" data-filter="all" data-target=".filterable-news">All</button>
+      <button class="filter-btn" data-filter="skills" data-target=".filterable-news">Skill Development</button>
+      <button class="filter-btn" data-filter="education" data-target=".filterable-news">Education</button>
+      <button class="filter-btn" data-filter="health" data-target=".filterable-news">Health</button>
+      <button class="filter-btn" data-filter="awards" data-target=".filterable-news">Recognition</button>
+    </div>
+    <div class="featured-article" data-fade>
+      <div class="fa-img" style="background:linear-gradient(135deg,var(--green),var(--green-light))">👩‍🎓</div>
+      <div class="fa-body">
+        <span class="news-cat cat-green">Skill Development</span>
+        <h2>50 Women Graduate from Shokti Nari Sewing Center — Batch 2025</h2>
+        <p class="news-excerpt">Our largest cohort yet completed a 3-month intensive tailoring and garment-making program. Each graduate received a certificate, a starter sewing kit, and is now connected to local industry for job placement support.</p>
+        <div class="fa-meta"><span>📅 April 15, 2025</span><span>👤 Foundation Team</span></div>
+        <a href="#" class="btn btn-outline btn-sm" style="margin-top:20px;align-self:flex-start">Read Full Story →</a>
+      </div>
+    </div>
+    <div class="news-grid-3 filterable-news">
+      <div class="news-card" data-cat="skills" data-fade data-delay="1"><div class="news-thumb" style="background:linear-gradient(135deg,#d4921e,#f0b040)">📱</div><div class="news-body"><span class="news-cat cat-gold">Digital Literacy</span><h3 class="news-title">Meye Shikhi Launches Mobile Banking Module in Godnail</h3><p class="news-excerpt">Rural women now learning bKash and Nagad as part of our expanded digital curriculum.</p><div class="news-meta"><span>March 28, 2025</span><a href="#">Read More →</a></div></div></div>
+      <div class="news-card" data-cat="awards" data-fade data-delay="2"><div class="news-thumb" style="background:linear-gradient(135deg,#7c4daa,#b07fda)">🏆</div><div class="news-body"><span class="news-cat cat-purple">Recognition</span><h3 class="news-title">Subaita Foundation Receives District Social Service Award 2025</h3><p class="news-excerpt">Narayanganj District Administration honored our contribution to women's empowerment.</p><div class="news-meta"><span>February 10, 2025</span><a href="#">Read More →</a></div></div></div>
+      <div class="news-card" data-cat="education" data-fade data-delay="3"><div class="news-thumb" style="background:linear-gradient(135deg,var(--green),var(--green-light))">📚</div><div class="news-body"><span class="news-cat cat-green">Education</span><h3 class="news-title">120 Girls Receive Alo Scholarships for 2024–25 Academic Year</h3><p class="news-excerpt">Our annual round supported 120 girl students at risk of dropout, covering fees and materials.</p><div class="news-meta"><span>December 5, 2024</span><a href="#">Read More →</a></div></div></div>
+      <div class="news-card" data-cat="health" data-fade data-delay="1"><div class="news-thumb" style="background:linear-gradient(135deg,#2562b8,#5a9fd4)">🏥</div><div class="news-body"><span class="news-cat cat-blue">Health</span><h3 class="news-title">Shusto Nari Health Camp Reaches 300 Women in Siddhirganj</h3><p class="news-excerpt">Our quarterly health camp expanded, offering free maternal health checks and nutrition counseling.</p><div class="news-meta"><span>November 18, 2024</span><a href="#">Read More →</a></div></div></div>
+      <div class="news-card" data-cat="skills" data-fade data-delay="2"><div class="news-thumb" style="background:linear-gradient(135deg,#7c4daa,#7c4daa99)">💼</div><div class="news-body"><span class="news-cat cat-purple">Micro-Enterprise</span><h3 class="news-title">50 Women Launch Businesses Through Gram Udyog Round 4</h3><p class="news-excerpt">The fourth round disbursed grants to 50 women entrepreneurs in food and handicraft sectors.</p><div class="news-meta"><span>October 8, 2024</span><a href="#">Read More →</a></div></div></div>
+      <div class="news-card" data-cat="awards" data-fade data-delay="3"><div class="news-thumb" style="background:linear-gradient(135deg,#065f46,#2d9e5f)">🤝</div><div class="news-body"><span class="news-cat cat-green">Partnership</span><h3 class="news-title">MOU Signed with Narayanganj City Corporation</h3><p class="news-excerpt">A formal partnership will expand our legal aid and health camp services to three new communities in 2025.</p><div class="news-meta"><span>January 22, 2025</span><a href="#">Read More →</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream">
+  <div class="container">
+    <div class="text-center" data-fade>
+      <div class="label center">Impact Stories</div>
+      <h2>Women Who <em class="em-green">Changed Their Lives</em></h2>
+    </div>
+    <div class="stories-grid">
+      <div class="story-card" data-fade data-delay="1"><div class="story-avatar" style="background:var(--green)">F</div><div><blockquote>"The sewing training gave me a skill and my own income. I no longer depend on anyone — I run my own tailoring shop in Godnail now."</blockquote><div class="story-name">Fatema Begum</div><div class="story-role">Shokti Nari Graduate · Godnail</div></div></div>
+      <div class="story-card" data-fade data-delay="2"><div class="story-avatar" style="background:var(--gold);color:var(--dark)">R</div><div><blockquote>"When I faced a family crisis, the legal aid cell guided me with patience and dignity. They helped me secure my rights and protect my children."</blockquote><div class="story-name">Rokshana Khatun</div><div class="story-role">Legal Aid Beneficiary · Narayanganj</div></div></div>
+      <div class="story-card" data-fade data-delay="1"><div class="story-avatar" style="background:#7c4daa">S</div><div><blockquote>"With the micro-grant I started selling homemade pickles and now earn more than my husband. My children call me the 'business mama'."</blockquote><div class="story-name">Sharmin Akter</div><div class="story-role">Gram Udyog Graduate · Rupganj</div></div></div>
+      <div class="story-card" data-fade data-delay="2"><div class="story-avatar" style="background:var(--mid)">N</div><div><blockquote>"Thanks to the Alo Scholarship, my daughter completed her SSC. Without Subaita Foundation's support we would have had to stop her education."</blockquote><div class="story-name">Nasrin Akter</div><div class="story-role">Parent · Alo Scholarship Program</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<div class="newsletter-section">
+  <div class="container">
+    <div class="label center white">Stay Connected</div>
+    <h2 style="color:var(--white);margin-bottom:10px">Get Our Monthly <em class="em-gold">Impact Report</em></h2>
+    <p>Stories, program updates and news — straight to your inbox. No spam, ever.</p>
+    <form class="nl-form" data-demo>
+      <input type="email" placeholder="Enter your email address" required/>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo-wrap" style="margin-bottom:0">
+          <div class="logo-icon" style="width:42px;height:42px">{LOGO_SVG}</div>
+          <div class="logo-text-wrap">
+            <span class="logo-name">Subaita Foundation</span>
+            <span class="logo-tagline">Empower · Educate · Elevate</span>
+          </div>
+        </a>
+        <p class="footer-brand-text">A registered non-profit organization dedicated to women's empowerment, skill development, education, and social protection in Narayanganj, Bangladesh.</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook" aria-label="Facebook">f</a>
+          <a href="#" title="Instagram" aria-label="Instagram">ig</a>
+          <a href="#" title="YouTube" aria-label="YouTube">yt</a>
+          <a href="#" title="WhatsApp" aria-label="WhatsApp">w</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="news.html">News &amp; Stories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Get Involved</h6>
+        <ul>
+          <li><a href="join-us.html#volunteer">Volunteer</a></li>
+          <li><a href="join-us.html#donate">Donate</a></li>
+          <li><a href="join-us.html#partner">Partner With Us</a></li>
+          <li><a href="join-us.html#intern">Internship</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="#">📍 Dolon Chapa City Plaza (Ground Floor), Chairman Office, Godnail, Narayanganj</a></li>
+          <li><a href="tel:+8801700000000">📞 +880 1700 000000</a></li>
+          <li><a href="mailto:info@subaitafoundation.com">✉️ info@subaitafoundation.com</a></li>
+          <li><a href="contact.html">📅 Mon–Sat: 9am – 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Subaita Foundation. All rights reserved.</span>
+      <span>Registered NGO · Narayanganj, Bangladesh</span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
