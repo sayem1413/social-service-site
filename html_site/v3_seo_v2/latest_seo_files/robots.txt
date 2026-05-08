@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subaitafoundation.com/sitemap.xml
+
+# Block admin/system files
+Disallow: /css/
+Disallow: /js/
+Disallow: /php/
