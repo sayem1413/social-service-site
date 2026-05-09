@@ -10,7 +10,7 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
 // ── CONFIG ── Change this to your real email ─────────────────
-$to_email   = 'info@subaitafoundation.com';
+$to_email   = 'mail@subaitafoundation.com';
 $site_name  = 'Subaita Foundation';
 $site_url   = 'https://subaitafoundation.com';
 // ─────────────────────────────────────────────────────────────
@@ -103,16 +103,16 @@ Your message:
 {$message}
 --------------
 
-If your matter is urgent, please call us at: +880 1700 000000
+If your matter is urgent, please call us at: +880 1728745059
 Office Hours: Saturday – Thursday, 9:00 AM – 6:00 PM
 
 With warm regards,
 Subaita Foundation Team
 Dolon Chapa City Plaza (Ground Floor), Godnail, Narayanganj
-info@subaitafoundation.com
+mail@subaitafoundation.com
 https://subaitafoundation.com
 ";
-    $reply_headers  = "From: {$site_name} <info@subaitafoundation.com>\r\n";
+    $reply_headers  = "From: {$site_name} <mail@subaitafoundation.com>\r\n";
     $reply_headers .= "MIME-Version: 1.0\r\n";
     $reply_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     mail($email, $reply_subject, $reply_body, $reply_headers);
