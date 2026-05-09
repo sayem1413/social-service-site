@@ -19,13 +19,34 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
+# ── Remove .html Extension ───────────────────────────────────
+
+# Redirect /page.html → /page
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Internally serve .html files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# ── Default Homepage ─────────────────────────────────────────
+DirectoryIndex index.html
+
 # ── Custom 404 ───────────────────────────────────────────────
 ErrorDocument 404 /404.html
+
+# ── Prevent Access to Sensitive Files ────────────────────────
+<FilesMatch "^(\.htaccess|\.env|composer\.(json|lock)|package\.json|webpack\.config\.js)$">
+  Require all denied
+</FilesMatch>
 
 # ── Security Headers ─────────────────────────────────────────
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Legacy browser protection
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
@@ -33,25 +54,53 @@ ErrorDocument 404 /404.html
 
 # ── Browser Caching ──────────────────────────────────────────
 <IfModule mod_expires.c>
+
   ExpiresActive On
-  ExpiresByType text/html                 "access plus 1 day"
-  ExpiresByType text/css                  "access plus 1 month"
-  ExpiresByType application/javascript    "access plus 1 month"
-  ExpiresByType image/png                 "access plus 6 months"
-  ExpiresByType image/jpeg                "access plus 6 months"
-  ExpiresByType image/svg+xml             "access plus 6 months"
-  ExpiresByType image/webp                "access plus 6 months"
-  ExpiresByType application/pdf           "access plus 1 month"
-  ExpiresByType image/x-icon              "access plus 1 year"
+
+  # HTML
+  ExpiresByType text/html "access plus 1 day"
+
+  # CSS & JS
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Images
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # Documents
+  ExpiresByType application/pdf "access plus 1 month"
+
 </IfModule>
 
 # ── GZIP Compression ─────────────────────────────────────────
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/xml application/xml
+
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+
 </IfModule>
 
 # ── Block Bad Bots ───────────────────────────────────────────
 <IfModule mod_rewrite.c>
-  RewriteCond %{HTTP_USER_AGENT} (msnbot|scrapbot|harvest|extract|grab|miner) [NC]
+  RewriteCond %{HTTP_USER_AGENT} (scrapbot|harvest|extract|grab|miner|curl|wget|python) [NC]
   RewriteRule .* - [F,L]
+</IfModule>
+
+# ── Disable ETags ────────────────────────────────────────────
+FileETag None
+
+<IfModule mod_headers.c>
+  Header unset ETag
 </IfModule>
