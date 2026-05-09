@@ -1,5 +1,0 @@
-/* SHARED BASE — all inner pages include this inline */
-:root{--green:#1a6b3c;--green-light:#2d9e5f;--gold:#e8a227;--cream:#faf7f2;--dark:#111a14;--mid:#3b5045;--muted:#6b7c72;--white:#ffffff;--purple:#7c4daa}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
