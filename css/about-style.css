@@ -44,3 +44,118 @@
 @media(max-width:1024px){.mission-grid{grid-template-columns:1fr;gap:44px}.mv-visual{height:300px}.values-grid{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.values-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.team-grid{grid-template-columns:1fr}}
+
+
+.credentials-section { background: var(--cream); padding: 88px 0; }
+.credentials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
+.cert-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  border: 1px solid var(--border); overflow: hidden;
+  transition: var(--transition); text-align: center;
+}
+.cert-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+/* Certificate thumbnail area */
+.cert-thumb {
+  position: relative; height: 220px;
+  background: linear-gradient(135deg, #f0f4f0, #e8f4ee);
+  display: flex; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--border); overflow: hidden;
+  cursor: pointer;
+}
+.cert-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  transition: transform 0.35s ease;
+}
+.cert-thumb:hover img { transform: scale(1.04); }
+
+/* PDF icon fallback (when no image) */
+.cert-icon {
+  font-size: 3.5rem; opacity: 0.4;
+}
+
+/* Overlay on hover */
+.cert-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26, 107, 60, 0.75);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  opacity: 0; transition: opacity 0.28s ease;
+}
+.cert-thumb:hover .cert-overlay { opacity: 1; }
+.cert-overlay span {
+  color: var(--white); font-size: 0.85rem;
+  font-weight: 700; letter-spacing: 0.5px;
+}
+.cert-overlay svg { width: 32px; height: 32px; fill: var(--white); }
+
+/* Badge on card */
+.cert-badge {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--green); color: var(--white);
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 20px;
+}
+
+/* Card body */
+.cert-body { padding: 20px 22px 24px; }
+.cert-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--dark); margin-bottom: 6px;
+}
+.cert-body p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.cert-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 0.75rem; color: var(--muted);
+}
+.cert-meta strong { color: var(--green); }
+.cert-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px; border-radius: 30px;
+  background: var(--green); color: var(--white);
+  font-size: 0.8rem; font-weight: 700;
+  text-decoration: none; transition: var(--transition);
+  margin-top: 14px;
+}
+.cert-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+.cert-btn svg { width: 14px; height: 14px; fill: var(--white); }
+
+/* Award strip */
+.award-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 52px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--white);
+}
+.award-item {
+  padding: 28px 20px; text-align: center;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.award-item:last-child { border-right: none; }
+.award-item:hover { background: var(--green-muted); }
+.award-icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+.award-item h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.92rem; font-weight: 700;
+  color: var(--dark); margin-bottom: 4px;
+}
+.award-item p { font-size: 0.75rem; color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .credentials-grid { grid-template-columns: 1fr 1fr; }
+  .award-strip { grid-template-columns: 1fr 1fr; }
+  .award-item:nth-child(2) { border-right: none; }
+  .award-item:nth-child(3) { border-top: 1px solid var(--border); }
+  .award-item:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+}
+@media (max-width: 768px) {
+  .credentials-grid { grid-template-columns: 1fr; }
+  .award-strip { grid-template-columns: 1fr 1fr; }
+}
