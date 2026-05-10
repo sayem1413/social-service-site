@@ -274,7 +274,7 @@
     </div>
   </section>
 
-  <section class="credentials-section">
+  <section class="credentials-section" style="background:var(--cream);padding:88px 0">
     <div class="container">
 
       <!-- Header -->
@@ -287,125 +287,55 @@
         </p>
       </div>
 
-      <!-- Certificate Cards -->
-      <div class="credentials-grid">
+      <!-- Certificate iframe Preview -->
+      <div style="max-width:820px;margin:52px auto 0" data-fade>
+        <div class="cert-preview-wrap">
 
-        <!-- Card 1 — NGO Registration -->
-        <div class="cert-card" data-fade data-delay="1">
-          <div class="cert-thumb" onclick="window.open('assets/certificates/ngo-registration.pdf','_blank')">
-            <!--
-            OPTION A — If you have a JPG preview of the certificate:
-            <img src="assets/certificates/ngo-registration-preview.jpg" alt="NGO Registration Certificate"/>
-
-            OPTION B — If no image, keep the icon below:
-          -->
-            <span class="cert-icon">📜</span>
-            <div class="cert-overlay">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
-              </svg>
-              <span>View Certificate</span>
+          <!-- Browser-style top bar -->
+          <div class="cert-preview-bar">
+            <div class="cert-preview-dots">
+              <span></span><span></span><span></span>
             </div>
-            <span class="cert-badge">✓ Verified</span>
-          </div>
-          <div class="cert-body">
-            <h4>NGO Registration Certificate</h4>
-            <p>Officially registered under the NGO Affairs Bureau, Government of Bangladesh.</p>
-            <div class="cert-meta">
-              <span>Issued by: <strong>NGO Affairs Bureau</strong></span>
-            </div>
-            <a href="assets/certificates/ngo-registration.pdf" target="_blank" rel="noopener" class="cert-btn">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
-              </svg>
-              View Full Certificate
+            <span class="cert-preview-label">
+              📄 certificate-of-registration-of-societies.pdf
+            </span>
+            <a href="assets/certificates/certificate-of-registration-of-societies.pdf" target="_blank" rel="noopener"
+              class="cert-preview-open">
+              ↗ Open
             </a>
           </div>
-        </div>
 
-        <!-- Card 2 — Joint Stock Certificate -->
-        <div class="cert-card" data-fade data-delay="2">
-          <div class="cert-thumb" onclick="window.open('assets/certificates/joint-stock.pdf','_blank')">
-            <span class="cert-icon">📋</span>
-            <div class="cert-overlay">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
-              </svg>
-              <span>View Certificate</span>
-            </div>
-            <span class="cert-badge">✓ Verified</span>
-          </div>
-          <div class="cert-body">
-            <h4>Society Registration Certificate</h4>
-            <p>Registered under the Societies Registration Act, Government of Bangladesh.</p>
-            <div class="cert-meta">
-              <span>Issued by: <strong>Joint Stock Companies</strong></span>
-            </div>
-            <a href="assets/certificates/joint-stock.pdf" target="_blank" rel="noopener" class="cert-btn">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
-              </svg>
-              View Full Certificate
-            </a>
-          </div>
-        </div>
+          <!-- Verified badge -->
+          <div class="cert-verified-badge">✓ Government Verified</div>
 
-        <!-- Card 3 — Award / Recognition -->
-        <div class="cert-card" data-fade data-delay="3">
-          <div class="cert-thumb" onclick="window.open('assets/certificates/award-2025.pdf','_blank')">
-            <span class="cert-icon">🏆</span>
-            <div class="cert-overlay">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
-              </svg>
-              <span>View Certificate</span>
-            </div>
-            <span class="cert-badge">2025</span>
-          </div>
-          <div class="cert-body">
-            <h4>District Social Service Award</h4>
-            <p>Awarded by Narayanganj District Administration for outstanding contribution to women's empowerment.</p>
-            <div class="cert-meta">
-              <span>Issued by: <strong>Narayanganj District Admin</strong></span>
-            </div>
-            <a href="assets/certificates/award-2025.pdf" target="_blank" rel="noopener" class="cert-btn">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
-              </svg>
-              View Certificate
-            </a>
-          </div>
-        </div>
+          <!-- PDF embedded via iframe -->
+          <iframe class="cert-iframe"
+            src="assets/certificates/certificate-of-registration-of-societies.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+            title="Society Registration Certificate — Subaita Foundation" loading="lazy">
+          </iframe>
 
-      </div><!-- end credentials-grid -->
+          <!-- Info + buttons below iframe -->
+          <div class="cert-info-row">
+            <div class="cert-info-left">
+              <h4>Society Registration Certificate</h4>
+              <p>Issued by: Joint Stock Companies &amp; Firms · Government of Bangladesh</p>
+            </div>
+            <div class="cert-info-right">
+              <a href="assets/certificates/certificate-of-registration-of-societies.pdf" target="_blank" rel="noopener"
+                class="cert-dl-btn primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM12 17H8v-2h4v2zm4-4H8v-2h8v2z" />
+                </svg>
+                View Full Screen
+              </a>
+              <a href="assets/certificates/certificate-of-registration-of-societies.pdf" download
+                class="cert-dl-btn secondary">
+                ⬇ Download
+              </a>
+            </div>
+          </div>
 
-      <!-- Award Strip -->
-      <div class="award-strip" data-fade>
-        <div class="award-item">
-          <span class="award-icon">🏛️</span>
-          <h5>NGO Affairs Bureau</h5>
-          <p>Fully Registered</p>
-        </div>
-        <div class="award-item">
-          <span class="award-icon">🤝</span>
-          <h5>District Administration</h5>
-          <p>Recognized Partner</p>
-        </div>
-        <div class="award-item">
-          <span class="award-icon">📊</span>
-          <h5>Transparent Finance</h5>
-          <p>Annual Reports Published</p>
-        </div>
-        <div class="award-item">
-          <span class="award-icon">✅</span>
-          <h5>Govt. Verified</h5>
-          <p>All Docs Authenticated</p>
         </div>
       </div>
 
